@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetERP — Panduan Penggunaan Sistem</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+        }
+
+        details summary {
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
+        }
+
+        .hero-animal {
+            filter:
+                drop-shadow(0 20px 25px rgba(37, 99, 235, 0.15))
+                drop-shadow(0 8px 12px rgba(15, 23, 42, 0.08));
+
+            -webkit-mask-image: radial-gradient(
+                ellipse at center,
+                black 50%,
+                rgba(0, 0, 0, 0.95) 65%,
+                rgba(0, 0, 0, 0.5) 82%,
+                transparent 100%
+            );
+
+            mask-image: radial-gradient(
+                ellipse at center,
+                black 50%,
+                rgba(0, 0, 0, 0.95) 65%,
+                rgba(0, 0, 0, 0.5) 82%,
+                transparent 100%
+            );
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+            <div class="flex h-16 items-center justify-between sm:h-20">
+
+                <!-- LOGO -->
+                <a
+                    href="/Index.html"
+                    class="flex min-w-0 items-center gap-2 sm:gap-3"
+                >
+                    <img
+                        src="Accest/img/pet.jpeg"
+                        alt="Logo PetERP"
+                        class="h-9 w-auto shrink-0 object-contain sm:h-10"
+                    >
+
+                    <div class="min-w-0">
+                        <h1 class="truncate text-base font-bold text-slate-900 sm:text-lg">
+                            Pet<span class="text-blue-600">ERP</span>
+                        </h1>
+
+                        <p class="text-[9px] text-slate-500 sm:text-xs">
+                            Tutorial Sistem
+                        </p>
+                    </div>
+                </a>
+
+
+                <!-- NAVBAR DESKTOP -->
+                <div class="hidden items-center gap-8 md:flex">
+
+                    <a
+                        href="#beranda"
+                        data-nav="beranda"
+                        class="nav-link text-sm font-medium text-blue-600 transition hover:text-blue-600"
+                    >
+                        Beranda
+                    </a>
+
+                    <a
+                        href="#playlist"
+                        data-nav="playlist"
+                        class="nav-link text-sm font-medium text-slate-600 transition hover:text-blue-600"
+                    >
+                        Playlist
+                    </a>
+
+                    <a
+                        href="#tentang"
+                        data-nav="tentang"
+                        class="nav-link text-sm font-medium text-slate-600 transition hover:text-blue-600"
+                    >
+                        Tentang
+                    </a>
+
+                </div>
+
+
+                <!-- MENU MOBILE -->
+                <details class="relative md:hidden">
+
+                    <summary
+                        class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white text-xl text-slate-700 shadow-sm"
+                    >
+                        ☰
+                    </summary>
+
+                    <div
+                        class="absolute right-0 mt-3 w-44 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl"
+                    >
+
+                        <a
+                            href="#beranda"
+                            data-nav="beranda"
+                            class="nav-link-mobile block rounded-xl bg-blue-50 px-4 py-3 text-sm font-medium text-blue-600"
+                        >
+                            Beranda
+                        </a>
+
+                        <a
+                            href="#playlist"
+                            data-nav="playlist"
+                            class="nav-link-mobile block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                        >
+                            Playlist
+                        </a>
+
+                        <a
+                            href="#tentang"
+                            data-nav="tentang"
+                            class="nav-link-mobile block rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600"
+                        >
+                            Tentang
+                        </a>
+
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section
+        id="beranda"
+        class="relative scroll-mt-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-100"
+    >
+
+        <!-- BACKGROUND DEKORASI -->
+
+        <div
+            class="absolute -right-32 -top-32 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl sm:h-[420px] sm:w-[420px]"
+        ></div>
+
+        <div
+            class="absolute -bottom-40 right-10 h-64 w-64 rounded-full bg-indigo-200/30 blur-3xl sm:right-20 sm:h-[350px] sm:w-[350px]"
+        ></div>
+
+        <div
+            class="absolute -bottom-40 -left-32 h-64 w-64 rounded-full bg-blue-100/60 blur-3xl sm:h-[350px] sm:w-[350px]"
+        ></div>
+
+
+        <!-- HERO CONTAINER -->
+
+        <div
+            class="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 sm:py-14 md:grid-cols-2 md:gap-8 md:py-16 lg:px-8 lg:py-20"
+        >
+
+            <!-- =================================================
+                 HERO TEXT
+            ================================================== -->
+
+            <div class="relative z-20 min-w-0 text-center md:text-left">
+
+                <!-- LABEL -->
+
+                <span
+                    class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-3 py-2 text-[11px] font-semibold text-blue-600 shadow-sm backdrop-blur sm:px-4 sm:text-sm"
+                >
+                    📚 Panduan Sistem PetERP
+                </span>
+
+
+                <!-- TITLE -->
+
+                <h2
+                    class="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:mt-5 sm:text-4xl md:text-5xl lg:text-6xl"
+                >
+                    Pelajari Pet<span class="text-blue-600">ERP</span>
+                </h2>
+
+
+                <!-- DESCRIPTION -->
+
+                <p
+                    class="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base md:mx-0 md:text-lg"
+                >
+                    Ikuti rangkaian video tutorial PetERP secara berurutan
+                    untuk membantu memahami penggunaan sistem dari awal
+                    hingga tahap berikutnya.
+                </p>
+
+
+                <!-- BUTTON -->
+
+                <div
+                    class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start"
+                >
+
+                    <a
+                        href="#playlist"
+                        class="rounded-xl bg-blue-600 px-6 py-3.5 text-center font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
+                    >
+                        ▶ Mulai Tutorial
+                    </a>
+
+                    <a
+                        href="#playlist"
+                        class="rounded-xl border border-slate-300 bg-white/80 px-6 py-3.5 text-center font-semibold text-slate-700 shadow-sm backdrop-blur transition hover:border-blue-600 hover:text-blue-600"
+                    >
+                        Lihat Playlist
+                    </a>
+
+                </div>
+
+
+                <!-- MINI INFO -->
+
+                <div
+                    class="mt-7 flex flex-col items-center gap-4 text-sm text-slate-500 sm:flex-row sm:justify-center md:justify-start"
+                >
+
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600"
+                        >
+                            ✓
+                        </span>
+
+                        Tutorial berurutan
+                    </div>
+
+
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600"
+                        >
+                            ▶
+                        </span>
+
+                        Video tutorial
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GAMBAR + STATISTIK
+            ================================================== -->
+
+            <div class="relative min-w-0">
+
+                <!-- AREA GAMBAR -->
+
+                <div
+                    class="relative flex min-h-[250px] items-center justify-center sm:min-h-[330px] md:min-h-[390px]"
+                >
+
+                    <!-- CAHAYA -->
+
+                    <div
+                        class="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-200/50 blur-3xl sm:h-80 sm:w-80"
+                    ></div>
+
+                    <div
+                        class="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/70 blur-3xl sm:h-56 sm:w-56"
+                    ></div>
+
+
+                    <!-- GAMBAR HEWAN -->
+
+                    <div class="relative z-10 w-full max-w-xl">
+                        <img
+                            src="Accest/img/pet.png"
+                            alt="Hewan PetERP"
+                            class="hero-animal mx-auto h-auto w-full object-contain"
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     STATISTIK
+                     SEKARANG LANGSUNG DI BAWAH GAMBAR
+                ================================================== -->
+
+                <div
+                    class="relative z-20 mt-2 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/80 bg-white/80 shadow-sm backdrop-blur sm:mt-4"
+                >
+
+                    <!-- STAT 1 -->
+
+                    <div class="px-2 py-5 text-center sm:px-4 sm:py-6">
+                        <p
+                            class="text-2xl font-extrabold text-blue-600 sm:text-3xl lg:text-4xl"
+                        >
+                            10
+                        </p>
+
+                        <p class="mt-1 text-[10px] text-slate-500 sm:text-sm">
+                            Tutorial
+                        </p>
+                    </div>
+
+
+                    <!-- STAT 2 -->
+
+                    <div
+                        class="border-x border-slate-200/70 px-2 py-5 text-center sm:px-4 sm:py-6"
+                    >
+                        <p
+                            class="text-2xl font-extrabold text-blue-600 sm:text-3xl lg:text-4xl"
+                        >
+                            01
+                        </p>
+
+                        <p class="mt-1 text-[10px] text-slate-500 sm:text-sm">
+                            Playlist
+                        </p>
+                    </div>
+
+
+                    <!-- STAT 3 -->
+
+                    <div class="px-2 py-5 text-center sm:px-4 sm:py-6">
+                        <p
+                            class="text-2xl font-extrabold text-blue-600 sm:text-3xl lg:text-4xl"
+                        >
+                            100%
+                        </p>
+
+                        <p class="mt-1 text-[10px] text-slate-500 sm:text-sm">
+                            Berurutan
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PLAYLIST
+    ====================================================== -->
+
+    <section
+        id="playlist"
+        class="mx-auto max-w-7xl scroll-mt-20 px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
+    >
+
+        <!-- HEADING -->
+
+        <div class="mx-auto max-w-2xl text-center">
+
+            <span
+                class="text-xs font-bold uppercase tracking-wider text-blue-600 sm:text-sm"
+            >
+                Playlist Tutorial
+            </span>
+
+            <h2
+                class="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl md:text-4xl"
+            >
+                Mulai Belajar
+                Pet<span class="text-blue-600">ERP</span>
+            </h2>
+
+            <p
+                class="mt-3 text-sm leading-7 text-slate-600 sm:text-base"
+            >
+                Ikuti tutorial dari nomor pertama agar proses pembelajaran
+                lebih mudah dan terstruktur.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             TUTORIAL 1 - 5
+        ================================================== -->
+
+        <div
+            class="mt-8 grid min-w-0 grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
+        >
+
+            <!-- VIDEO 1 -->
+
+            <a
+                href="tutorial.html?video=1"
+                class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+
+                <div class="relative aspect-video overflow-hidden">
+
+                    <img
+                        src="Accest/img/1.png"
+                        alt="Thumbnail Tutorial Login"
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    >
+
+                    <span
+                        class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-blue-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                    >
+                        01
+                    </span>
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-blue-600 shadow-lg sm:h-14 sm:w-14"
+                        >
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 sm:p-5">
+
+                    <p class="text-xs font-semibold uppercase tracking-wide text-blue-600">
+                        Tutorial 01
+                    </p>
+
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">
+                        Login
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Panduan penggunaan halaman login pada sistem PetERP.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- VIDEO 2 -->
+
+            <a
+                href="tutorial.html?video=2"
+                class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+
+                <div class="relative aspect-video overflow-hidden">
+
+                    <img
+                        src="Accest/img/2.png"
+                        alt="Thumbnail Tutorial Dashboard"
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    >
+
+                    <span
+                        class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-indigo-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                    >
+                        02
+                    </span>
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-indigo-600 shadow-lg sm:h-14 sm:w-14"
+                        >
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 sm:p-5">
+
+                    <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+                        Tutorial 02
+                    </p>
+
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">
+                        Dashboard
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Panduan penggunaan halaman dashboard PetERP.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- VIDEO 3 -->
+
+            <a
+                href="tutorial.html?video=3"
+                class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+
+                <div class="relative aspect-video overflow-hidden">
+
+                    <img
+                        src="Accest/img/3.png"
+                        alt="Thumbnail Tutorial Data Produk"
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    >
+
+                    <span
+                        class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-cyan-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                    >
+                        03
+                    </span>
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-cyan-600 shadow-lg sm:h-14 sm:w-14"
+                        >
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 sm:p-5">
+
+                    <p class="text-xs font-semibold uppercase tracking-wide text-cyan-600">
+                        Tutorial 03
+                    </p>
+
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">
+                        Data Produk
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Panduan penggunaan halaman data produk pada PetERP.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- VIDEO 4 -->
+
+            <a
+                href="tutorial.html?video=4"
+                class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+
+                <div class="relative aspect-video overflow-hidden">
+
+                    <img
+                        src="Accest/img/4.png"
+                        alt="Thumbnail Tutorial Kategori Produk"
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    >
+
+                    <span
+                        class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-violet-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                    >
+                        04
+                    </span>
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-violet-600 shadow-lg sm:h-14 sm:w-14"
+                        >
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 sm:p-5">
+
+                    <p class="text-xs font-semibold uppercase tracking-wide text-violet-600">
+                        Tutorial 04
+                    </p>
+
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">
+                        Kategori Produk
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Panduan penggunaan halaman kategori produk pada PetERP.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- VIDEO 5 -->
+
+            <a
+                href="tutorial.html?video=5"
+                class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+
+                <div class="relative aspect-video overflow-hidden">
+
+                    <img
+                        src="Accest/img/5.png"
+                        alt="Thumbnail Tutorial Pelanggan"
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    >
+
+                    <span
+                        class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-emerald-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                    >
+                        05
+                    </span>
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-emerald-600 shadow-lg sm:h-14 sm:w-14"
+                        >
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="p-4 sm:p-5">
+
+                    <p class="text-xs font-semibold uppercase tracking-wide text-emerald-600">
+                        Tutorial 05
+                    </p>
+
+                    <h3 class="mt-2 text-lg font-bold text-slate-900">
+                        Pelanggan
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Panduan penggunaan halaman pelanggan pada PetERP.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             TUTORIAL 6 - 10
+        ================================================== -->
+
+        <details class="mt-8">
+
+            <summary
+                class="mx-auto flex w-fit cursor-pointer items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-600 hover:text-blue-600 sm:px-6 sm:text-base"
+            >
+                <span>
+                    Tampilkan tutorial lainnya
+                </span>
+
+                <span class="arrow text-lg transition-transform duration-300">
+                    ↓
+                </span>
+            </summary>
+
+
+            <div
+                class="mt-8 grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
+            >
+
+                <!-- VIDEO 6 -->
+
+                <a
+                    href="tutorial.html?video=6"
+                    class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img
+                            src="Accest/img/6.png"
+                            alt="Thumbnail Tutorial Hewan"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        >
+
+                        <span
+                            class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-orange-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                        >
+                            06
+                        </span>
+
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                        >
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-orange-600 shadow-lg sm:h-14 sm:w-14"
+                            >
+                                ▶
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="p-4 sm:p-5">
+
+                        <p class="text-xs font-semibold uppercase tracking-wide text-orange-600">
+                            Tutorial 06
+                        </p>
+
+                        <h3 class="mt-2 text-lg font-bold text-slate-900">
+                            Hewan
+                        </h3>
+
+                        <p class="mt-2 text-sm leading-6 text-slate-500">
+                            Panduan penggunaan halaman hewan pada PetERP.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- VIDEO 7 -->
+
+                <a
+                    href="tutorial.html?video=7"
+                    class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img
+                            src="Accest/img/7.png"
+                            alt="Thumbnail Tutorial 7"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        >
+
+                        <span
+                            class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-pink-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                        >
+                            07
+                        </span>
+
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                        >
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-pink-600 shadow-lg sm:h-14 sm:w-14"
+                            >
+                                ▶
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="p-4 sm:p-5">
+
+                        <p class="text-xs font-semibold uppercase tracking-wide text-pink-600">
+                            Tutorial 07
+                        </p>
+
+                        <h3 class="mt-2 text-lg font-bold text-slate-900">
+                            Hewan
+                        </h3>
+
+                        <p class="mt-2 text-sm leading-6 text-slate-500">
+                            Panduan penggunaan halaman Kategori &amp; Jenis hewan.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- VIDEO 8 -->
+
+                <a
+                    href="tutorial.html?video=8"
+                    class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img
+                            src="Accest/img/8.png"
+                            alt="Thumbnail Tutorial 8"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        >
+
+                        <span
+                            class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-cyan-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                        >
+                            08
+                        </span>
+
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                        >
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-cyan-600 shadow-lg sm:h-14 sm:w-14"
+                            >
+                                ▶
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="p-4 sm:p-5">
+
+                        <p class="text-xs font-semibold uppercase tracking-wide text-cyan-600">
+                            Tutorial 08
+                        </p>
+
+                        <h3 class="mt-2 text-lg font-bold text-slate-900">
+                            Data Cabang
+                        </h3>
+
+                    </div>
+
+                </a>
+
+
+                <!-- VIDEO 9 -->
+
+                <a
+                    href="tutorial.html?video=9"
+                    class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img
+                            src="Accest/img/9.png"
+                            alt="Thumbnail Tutorial 9"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        >
+
+                        <span
+                            class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-amber-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                        >
+                            09
+                        </span>
+
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                        >
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-amber-600 shadow-lg sm:h-14 sm:w-14"
+                            >
+                                ▶
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="p-4 sm:p-5">
+
+                        <p class="text-xs font-semibold uppercase tracking-wide text-amber-600">
+                            Tutorial 09
+                        </p>
+
+                        <h3 class="mt-2 text-lg font-bold text-slate-900">
+                            Data Jabatan
+                        </h3>
+
+                    </div>
+
+                </a>
+
+
+                <!-- VIDEO 10 -->
+
+                <a
+                    href="tutorial.html?video=10"
+                    class="group min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img
+                            src="Accest/img/10.png"
+                            alt="Thumbnail Tutorial 10"
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        >
+
+                        <span
+                            class="absolute left-3 top-3 rounded-lg bg-white px-3 py-1 text-xs font-bold text-blue-600 shadow-sm sm:left-4 sm:top-4 sm:text-sm"
+                        >
+                            10
+                        </span>
+
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover:opacity-100"
+                        >
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-lg text-blue-600 shadow-lg sm:h-14 sm:w-14"
+                            >
+                                ▶
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="p-4 sm:p-5">
+
+                        <p class="text-xs font-semibold uppercase tracking-wide text-blue-600">
+                            Tutorial 10
+                        </p>
+
+                        <h3 class="mt-2 text-lg font-bold text-slate-900">
+                            Data Pegawai
+                        </h3>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         TENTANG
+    ====================================================== -->
+
+    <section
+        id="tentang"
+        class="mx-auto max-w-7xl scroll-mt-20 px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8"
+    >
+
+        <div
+            class="relative overflow-hidden rounded-3xl bg-slate-900 px-5 py-10 text-center sm:px-12 sm:py-12"
+        >
+
+            <div
+                class="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-blue-600/20"
+            ></div>
+
+            <div
+                class="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-indigo-600/20"
+            ></div>
+
+
+            <div class="relative">
+
+                <p
+                    class="text-xs font-semibold uppercase tracking-wider text-blue-400 sm:text-sm"
+                >
+                    PetERP Tutorial
+                </p>
+
+                <h2
+                    class="mt-3 text-2xl font-extrabold text-white sm:text-3xl"
+                >
+                    Siap untuk belajar?
+                </h2>
+
+                <p
+                    class="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base"
+                >
+                    Mulai dari tutorial pertama dan ikuti playlist
+                    secara berurutan untuk memahami penggunaan PetERP.
+                </p>
+
+                <a
+                    href="tutorial.html?video=1"
+                    class="mt-7 inline-block rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 sm:px-6 sm:text-base"
+                >
+                    Mulai dari Tutorial 01 →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="border-t border-slate-200 bg-white">
+
+        <div
+            class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-7 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left lg:px-8"
+        >
+
+            <div>
+
+                <p class="font-bold text-slate-900">
+                    Pet<span class="text-blue-600">ERP</span>
+                </p>
+
+                <p class="text-sm text-slate-500">
+                    Panduan penggunaan sistem.
+                </p>
+
+            </div>
+
+            <p class="text-xs text-slate-400 sm:text-sm">
+                © 2026 PetERP Tutorial
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* ================================
+           NAVBAR ACTIVE
+        ================================= */
+
+        const sections = document.querySelectorAll(
+            "#beranda, #playlist, #tentang"
+        );
+
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const navLinksMobile = document.querySelectorAll(
+            ".nav-link-mobile"
+        );
+
+
+        function setActiveNav(sectionId) {
+
+            navLinks.forEach(function (link) {
+
+                if (link.dataset.nav === sectionId) {
+
+                    link.classList.remove("text-slate-600");
+
+                    link.classList.add("text-blue-600");
+
+                } else {
+
+                    link.classList.remove("text-blue-600");
+
+                    link.classList.add("text-slate-600");
+
+                }
+
+            });
+
+
+            navLinksMobile.forEach(function (link) {
+
+                if (link.dataset.nav === sectionId) {
+
+                    link.classList.remove(
+                        "text-slate-700"
+                    );
+
+                    link.classList.add(
+                        "bg-blue-50",
+                        "text-blue-600"
+                    );
+
+                } else {
+
+                    link.classList.remove(
+                        "bg-blue-50",
+                        "text-blue-600"
+                    );
+
+                    link.classList.add(
+                        "text-slate-700"
+                    );
+
+                }
+
+            });
+
+        }
+
+
+        /* ================================
+           DETEKSI SECTION
+        ================================= */
+
+        const observer = new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        setActiveNav(
+                            entry.target.id
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                rootMargin: "-35% 0px -55% 0px",
+                threshold: 0
+            }
+
+        );
+
+
+        sections.forEach(function (section) {
+
+            observer.observe(section);
+
+        });
+
+
+        /* ================================
+           MENU DIKLIK
+        ================================= */
+
+        document
+            .querySelectorAll("[data-nav]")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        setActiveNav(
+                            link.dataset.nav
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* ================================
+           PROGRESS
+        ================================= */
+
+        function updateHomepageProgress() {
+
+            const totalTutorial = 10;
+
+            const watchedVideos =
+                JSON.parse(
+                    localStorage.getItem(
+                        "peterpWatched"
+                    )
+                ) || [];
+
+            const watched =
+                watchedVideos.length;
+
+            const percentage =
+                (watched / totalTutorial) * 100;
+
+
+            const progressText =
+                document.getElementById(
+                    "progressText"
+                );
+
+            const progressBar =
+                document.getElementById(
+                    "progressBar"
+                );
+
+            const heroProgressText =
+                document.getElementById(
+                    "heroProgressText"
+                );
+
+            const heroProgressBar =
+                document.getElementById(
+                    "heroProgressBar"
+                );
+
+
+            if (progressText) {
+
+                progressText.textContent =
+                    watched +
+                    " / " +
+                    totalTutorial +
+                    " selesai";
+
+            }
+
+
+            if (progressBar) {
+
+                progressBar.style.width =
+                    percentage + "%";
+
+            }
+
+
+            if (heroProgressText) {
+
+                heroProgressText.textContent =
+                    Math.round(percentage) + "%";
+
+            }
+
+
+            if (heroProgressBar) {
+
+                heroProgressBar.style.width =
+                    percentage + "%";
+
+            }
+
+        }
+
+
+        updateHomepageProgress();
+
+
+        window.addEventListener(
+            "storage",
+            function (event) {
+
+                if (
+                    event.key ===
+                    "peterpWatched"
+                ) {
+
+                    updateHomepageProgress();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

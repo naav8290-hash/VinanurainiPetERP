@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PetERP — Tutorial</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hilangkan marker details */
+        details summary {
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Scrollbar playlist */
+        #playlist::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #playlist::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #playlist::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 999px;
+        }
+
+        /* Pastikan area video menerima klik/touch */
+        #videoPlayer {
+            touch-action: manipulation;
+            pointer-events: auto;
+        }
+
+        #videoPlayer iframe {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+        }
+    </style>
+</head>
+
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between sm:h-20">
+
+                <!-- LOGO -->
+                <a
+                    href="/Index.html"
+                    class="flex min-w-0 items-center gap-2 sm:gap-3"
+                >
+
+                    <img
+                        src="Accest/img/pet.jpeg"
+                        alt="Logo PetERP"
+                        class="h-8 w-auto shrink-0 object-contain sm:h-10"
+                    >
+
+                    <div class="min-w-0">
+
+                        <h1 class="truncate text-sm font-bold text-slate-900 sm:text-lg">
+                            Pet<span class="text-blue-600">ERP</span>
+                        </h1>
+
+                        <p class="text-[9px] text-slate-500 sm:text-xs">
+                            Tutorial Sistem
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- KEMBALI -->
+                <a
+                    href="/Index.html"
+                    class="flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-blue-50 hover:text-blue-600 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
+                >
+
+                    <span class="text-base sm:text-lg">
+                        ←
+                    </span>
+
+                    <span>
+                        Kembali
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!--MAIN-->
+
+    <main class="mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
+
+        <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-7">
+
+
+            <!-- VIDEO SECTION -->
+
+            <section class="min-w-0">
+
+
+                <!-- VIDEO -->
+
+                <div
+                    class="relative aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-lg sm:rounded-3xl"
+                >
+
+                    <!--
+                        PENTING:
+                        Tidak ada overlay di atas video.
+                        YouTube bebas menerima klik/touch.
+                    -->
+
+                    <div
+                        id="videoPlayer"
+                        class="absolute inset-0 z-10 h-full w-full touch-manipulation"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- VIDEO INFO -->
+
+                <div class="mt-5 rounded-2xl bg-white p-4 shadow-sm sm:mt-6 sm:p-6">
+
+
+                    <!-- Nomor -->
+
+                    <p
+                        id="videoNumber"
+                        class="text-xs font-bold uppercase tracking-wider text-blue-600 sm:text-sm"
+                    >
+                        Tutorial 01
+                    </p>
+
+
+                    <!-- Judul -->
+
+                    <h2
+                        id="videoTitle"
+                        class="mt-2 text-xl font-extrabold leading-tight text-slate-900 sm:text-2xl lg:text-3xl"
+                    >
+                        Login
+                    </h2>
+
+
+                    <!-- Deskripsi -->
+
+                    <p
+                        id="videoDescription"
+                        class="mt-3 text-sm leading-6 text-slate-500 sm:text-base sm:leading-7"
+                    >
+                        Panduan penggunaan halaman login pada sistem PetERP.
+                    </p>
+
+
+
+                    <!-- NAVIGATION -->
+
+                    <div class="mt-6 grid grid-cols-2 gap-3 sm:flex sm:items-center sm:justify-between">
+
+
+                        <!-- PREVIOUS -->
+
+                        <button
+                            id="previousButton"
+                            type="button"
+                            onclick="previousVideo()"
+                            class="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 text-xs font-semibold text-slate-600 transition hover:border-blue-500 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 sm:min-h-12 sm:px-5 sm:text-sm"
+                        >
+
+                            <span class="text-base">
+                                ←
+                            </span>
+
+                            <span>
+                                Sebelumnya
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- NEXT -->
+
+                        <button
+                            id="nextButton"
+                            type="button"
+                            onclick="nextVideo()"
+                            class="flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blue-600 px-3 py-3 text-xs font-semibold text-white shadow-sm shadow-blue-600/20 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-40 sm:min-h-12 sm:px-5 sm:text-sm"
+                        >
+
+                            <span>
+                                Berikutnya
+                            </span>
+
+                            <span class="text-base">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PLAYLIST SECTION -->
+
+            <aside class="min-w-0">
+
+                <div
+                    class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24"
+                >
+
+
+                    <!-- PLAYLIST HEADER -->
+
+                    <div class="border-b border-slate-100 p-4 sm:p-5">
+
+                        <div class="flex items-start justify-between gap-3">
+
+                            <div>
+
+                                <p class="text-xs font-bold uppercase tracking-wider text-blue-600">
+                                    Playlist Tutorial
+                                </p>
+
+                                <h3 class="mt-1 text-lg font-extrabold text-slate-900 sm:text-xl">
+                                    Panduan PetERP
+                                </h3>
+
+                            </div>
+
+
+                            <!-- Progress -->
+
+                            <span
+                                id="progressText"
+                                class="shrink-0 rounded-lg bg-blue-50 px-2.5 py-1.5 text-xs font-bold text-blue-600"
+                            >
+                                0 / 10
+                            </span>
+
+                        </div>
+
+
+                        <!-- PROGRESS BAR -->
+
+                        <div class="mt-4">
+
+                            <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+
+                                <div
+                                    id="progressBar"
+                                    class="h-full w-0 rounded-full bg-blue-600 transition-all duration-500"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PLAYLIST -->
+
+                    <div
+                        id="playlist"
+                        class="max-h-[420px] overflow-y-auto p-3 sm:max-h-[500px] sm:p-4 lg:max-h-[600px]"
+                    >
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!--  YOUTUBE IFRAME API-->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <script>
+
+        /* =====================================================
+           DATA TUTORIAL
+        ====================================================== */
+
+        const tutorials = [
+
+            {
+                number: 1,
+                title: "Login",
+                description:
+                    "Panduan penggunaan halaman login pada sistem PetERP.",
+                youtubeId: "kUWvsCBEPBE"
+            },
+
+            {
+                number: 2,
+                title: "Dashboard",
+                description:
+                    "Panduan penggunaan halaman dashboard PetERP.",
+                youtubeId: "oMGtK8yLlUE"
+            },
+
+            {
+                number: 3,
+                title: "Data Produk",
+                description:
+                    "Panduan penggunaan halaman data produk pada PetERP.",
+                youtubeId: "MBPyIOYFy7E"
+            },
+
+            {
+                number: 4,
+                title: "Kategori Produk",
+                description:
+                    "Panduan penggunaan halaman kategori produk pada PetERP.",
+                youtubeId: ""
+            },
+
+            {
+                number: 5,
+                title: "Pelanggan",
+                description:
+                    "Panduan penggunaan halaman pelanggan pada PetERP.",
+                youtubeId: ""
+            },
+
+            {
+                number: 6,
+                title: "Hewan",
+                description:
+                    "Panduan penggunaan halaman hewan pada PetERP.",
+                youtubeId: ""
+            },
+
+            {
+                number: 7,
+                title: "Kategori & Jenis Hewan",
+                description:
+                    "Panduan penggunaan halaman Kategori & Jenis hewan.",
+                youtubeId: ""
+            },
+
+            {
+                number: 8,
+                title: "Data Cabang",
+                description:
+                    "Panduan penggunaan halaman data cabang pada PetERP.",
+                youtubeId: ""
+            },
+
+            {
+                number: 9,
+                title: "Data Jabatan",
+                description:
+                    "Panduan penggunaan halaman data jabatan pada PetERP.",
+                youtubeId: ""
+            },
+
+            {
+                number: 10,
+                title: "Data Pegawai",
+                description:
+                    "Panduan penggunaan halaman data pegawai pada PetERP.",
+                youtubeId: ""
+            }
+
+        ];
+
+
+
+        /* =====================================================
+           VARIABLE
+        ====================================================== */
+
+        let currentVideo =
+            parseInt(
+                new URLSearchParams(
+                    window.location.search
+                ).get("video")
+            ) || 1;
+
+
+        /* Pastikan nomor video valid */
+
+        if (
+            currentVideo < 1 ||
+            currentVideo > tutorials.length
+        ) {
+            currentVideo = 1;
+        }
+
+
+        let player = null;
+
+        let playerReady = false;
+
+
+        let watchedVideos =
+            JSON.parse(
+                localStorage.getItem("peterpWatched")
+            ) || [];
+
+
+
+        /* =====================================================
+           YOUTUBE API READY
+        ====================================================== */
+
+        function onYouTubeIframeAPIReady() {
+
+            createPlayer();
+
+        }
+
+
+
+        /* =====================================================
+           CREATE YOUTUBE PLAYER
+        ====================================================== */
+
+        function createPlayer() {
+
+            const video =
+                tutorials[currentVideo - 1];
+
+
+            if (
+                !video ||
+                !video.youtubeId
+            ) {
+
+                showVideoUnavailable();
+
+                return;
+
+            }
+
+
+            player =
+                new YT.Player(
+                    "videoPlayer",
+                    {
+
+                        videoId:
+                            video.youtubeId,
+
+
+                        playerVars: {
+
+                            /*
+                             * Autoplay
+                             */
+                            autoplay: 1,
+
+                            /*
+                             * Mute supaya
+                             * autoplay mobile
+                             * lebih mudah diizinkan
+                             */
+                            mute: 1,
+
+                            /*
+                             * Penting untuk mobile
+                             */
+                            playsinline: 1,
+
+                            /*
+                             * Tampilkan kontrol
+                             * YouTube
+                             */
+                            controls: 1,
+
+                            /*
+                             * Jangan tampilkan
+                             * video terkait sebanyak mungkin
+                             */
+                            rel: 0,
+
+                            /*
+                             * Tampilan branding
+                             */
+                            modestbranding: 1
+
+                        },
+
+
+                        events: {
+
+                            onReady:
+                                onPlayerReady,
+
+                            onStateChange:
+                                onPlayerStateChange
+
+                        }
+
+                    }
+                );
+
+        }
+
+
+
+        /* =====================================================
+           PLAYER READY
+        ====================================================== */
+
+        function onPlayerReady(event) {
+
+            playerReady = true;
+
+
+            /*
+             * Pastikan video mute.
+             * Ini penting agar autoplay
+             * bisa berjalan di mobile.
+             */
+
+            event.target.mute();
+
+
+            /*
+             * Jalankan video otomatis.
+             */
+
+            event.target.playVideo();
+
+        }
+
+
+
+        /* =====================================================
+           PLAYER STATE
+        ====================================================== */
+
+        function onPlayerStateChange(event) {
+
+            /*
+             * Kalau video selesai,
+             * tandai sebagai sudah ditonton.
+             */
+
+            if (
+                event.data ===
+                YT.PlayerState.ENDED
+            ) {
+
+                markAsWatched(
+                    currentVideo
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           VIDEO TIDAK TERSEDIA
+        ====================================================== */
+
+        function showVideoUnavailable() {
+
+            const videoPlayer =
+                document.getElementById(
+                    "videoPlayer"
+                );
+
+
+            videoPlayer.innerHTML = `
+
+                <div
+                    class="
+                        flex
+                        h-full
+                        w-full
+                        items-center
+                        justify-center
+                        bg-slate-900
+                        p-6
+                        text-center
+                    "
+                >
+
+                    <div>
+
+                        <div
+                            class="
+                                mx-auto
+                                flex
+                                h-14
+                                w-14
+                                items-center
+                                justify-center
+                                rounded-full
+                                bg-white/10
+                                text-2xl
+                            "
+                        >
+                            ▶
+                        </div>
+
+                        <p
+                            class="
+                                mt-4
+                                text-sm
+                                font-semibold
+                                text-white
+                            "
+                        >
+                            Video belum tersedia
+                        </p>
+
+                        <p
+                            class="
+                                mt-1
+                                text-xs
+                                text-slate-400
+                            "
+                        >
+                            Video tutorial ini belum memiliki
+                            sumber YouTube.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        /* =====================================================
+           LOAD VIDEO
+        ====================================================== */
+
+        function loadVideo(number) {
+
+            if (
+                number < 1 ||
+                number > tutorials.length
+            ) {
+
+                return;
+
+            }
+
+
+            currentVideo = number;
+
+
+            const video =
+                tutorials[number - 1];
+
+
+
+            /* =================================================
+               INFO VIDEO
+            ================================================== */
+
+            document.getElementById(
+                "videoNumber"
+            ).textContent =
+                "Tutorial " +
+                String(number).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "videoTitle"
+            ).textContent =
+                video.title;
+
+
+            document.getElementById(
+                "videoDescription"
+            ).textContent =
+                video.description;
+
+
+
+            /* =================================================
+               UPDATE URL
+            ================================================== */
+
+            const newUrl =
+                "tutorial.html?video=" +
+                number;
+
+
+            window.history.replaceState(
+                {},
+                "",
+                newUrl
+            );
+
+
+
+            /* =================================================
+               VIDEO YOUTUBE
+            ================================================== */
+
+            if (video.youtubeId) {
+
+                /*
+                 * Kalau player sudah ada,
+                 * cukup ganti video.
+                 */
+
+                if (
+                    player &&
+                    playerReady
+                ) {
+
+                    player.loadVideoById(
+                        video.youtubeId
+                    );
+
+                    /*
+                     * Mute agar autoplay
+                     * tetap diperbolehkan.
+                     */
+
+                    player.mute();
+
+                    /*
+                     * Jalankan otomatis.
+                     */
+
+                    player.playVideo();
+
+                }
+
+                /*
+                 * Kalau player belum dibuat,
+                 * buat player baru.
+                 */
+
+                else if (
+                    typeof YT !== "undefined" &&
+                    YT.Player
+                ) {
+
+                    createPlayer();
+
+                }
+
+            }
+
+            else {
+
+                /*
+                 * Jika video belum tersedia,
+                 * hentikan player.
+                 */
+
+                if (player) {
+
+                    try {
+
+                        player.stopVideo();
+
+                    } catch (error) {
+
+                        console.log(
+                            "Player belum siap."
+                        );
+
+                    }
+
+                }
+
+
+                showVideoUnavailable();
+
+            }
+
+
+
+            /* =================================================
+               PLAYLIST
+            ================================================== */
+
+            renderPlaylist();
+
+
+            updateProgress();
+
+
+            updateNavigation();
+
+
+
+            /* =================================================
+               MOBILE
+            ================================================== */
+
+            if (
+                window.innerWidth < 1024
+            ) {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MARK WATCHED
+        ====================================================== */
+
+        function markAsWatched(number) {
+
+            if (
+                !watchedVideos.includes(
+                    number
+                )
+            ) {
+
+                watchedVideos.push(
+                    number
+                );
+
+
+                watchedVideos.sort(
+                    (a, b) => a - b
+                );
+
+
+                localStorage.setItem(
+                    "peterpWatched",
+                    JSON.stringify(
+                        watchedVideos
+                    )
+                );
+
+            }
+
+
+            renderPlaylist();
+
+
+            updateProgress();
+
+        }
+
+
+
+        /* =====================================================
+           RENDER PLAYLIST
+        ====================================================== */
+
+        function renderPlaylist() {
+
+            const playlist =
+                document.getElementById(
+                    "playlist"
+                );
+
+
+            playlist.innerHTML = "";
+
+
+
+            tutorials.forEach(
+                (video) => {
+
+                    const isActive =
+                        video.number ===
+                        currentVideo;
+
+
+                    const isWatched =
+                        watchedVideos.includes(
+                            video.number
+                        );
+
+
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    button.type = "button";
+
+
+                    button.onclick =
+                        () => loadVideo(
+                            video.number
+                        );
+
+
+
+                    button.className = `
+
+                        group
+
+                        flex
+
+                        w-full
+
+                        items-start
+
+                        gap-3
+
+                        rounded-xl
+
+                        p-3
+
+                        text-left
+
+                        transition
+
+                        touch-manipulation
+
+                        ${
+                            isActive
+
+                                ? "bg-blue-50 ring-1 ring-blue-200"
+
+                                : "hover:bg-slate-50"
+                        }
+
+                    `;
+
+
+
+                    button.innerHTML = `
+
+                        <!-- NUMBER -->
+
+                        <div
+
+                            class="
+
+                                flex
+
+                                h-9
+
+                                w-9
+
+                                shrink-0
+
+                                items-center
+
+                                justify-center
+
+                                rounded-lg
+
+                                text-xs
+
+                                font-bold
+
+                                ${
+                                    isActive
+
+                                        ? "bg-blue-600 text-white"
+
+                                        : isWatched
+
+                                            ? "bg-emerald-100 text-emerald-600"
+
+                                            : "bg-slate-100 text-slate-500"
+                                }
+
+                            "
+
+                        >
+
+                            ${
+                                isWatched
+
+                                    ? "✓"
+
+                                    : String(
+                                        video.number
+                                    ).padStart(
+                                        2,
+                                        "0"
+                                    )
+                            }
+
+                        </div>
+
+
+
+                        <!-- CONTENT -->
+
+                        <div
+                            class="
+                                min-w-0
+                                flex-1
+                            "
+                        >
+
+                            <div
+
+                                class="
+
+                                    flex
+
+                                    items-start
+
+                                    justify-between
+
+                                    gap-2
+
+                                "
+
+                            >
+
+                                <h4
+
+                                    class="
+
+                                        text-sm
+
+                                        font-semibold
+
+                                        leading-5
+
+                                        ${
+                                            isActive
+
+                                                ? "text-blue-700"
+
+                                                : "text-slate-800"
+                                        }
+
+                                    "
+
+                                >
+
+                                    ${video.title}
+
+                                </h4>
+
+
+
+                                ${
+                                    isActive
+
+                                        ? `
+
+                                            <span
+
+                                                class="
+
+                                                    shrink-0
+
+                                                    rounded-full
+
+                                                    bg-blue-600
+
+                                                    px-2
+
+                                                    py-0.5
+
+                                                    text-[9px]
+
+                                                    font-bold
+
+                                                    uppercase
+
+                                                    text-white
+
+                                                "
+
+                                            >
+
+                                                Aktif
+
+                                            </span>
+
+                                        `
+
+                                        : ""
+
+                                }
+
+                            </div>
+
+
+
+                            <p
+
+                                class="
+
+                                    mt-1
+
+                                    line-clamp-2
+
+                                    text-xs
+
+                                    leading-5
+
+                                    text-slate-500
+
+                                "
+
+                            >
+
+                                ${video.description}
+
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+
+                    playlist.appendChild(
+                        button
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           PROGRESS
+        ====================================================== */
+
+        function updateProgress() {
+
+            const total =
+                tutorials.length;
+
+
+            const watched =
+                watchedVideos.length;
+
+
+            const percentage =
+                (watched / total) * 100;
+
+
+
+            document.getElementById(
+                "progressText"
+            ).textContent =
+                watched +
+                " / " +
+                total;
+
+
+
+            document.getElementById(
+                "progressBar"
+            ).style.width =
+                percentage + "%";
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        function updateNavigation() {
+
+            const previousButton =
+                document.getElementById(
+                    "previousButton"
+                );
+
+
+            const nextButton =
+                document.getElementById(
+                    "nextButton"
+                );
+
+
+            previousButton.disabled =
+                currentVideo === 1;
+
+
+            nextButton.disabled =
+                currentVideo ===
+                tutorials.length;
+
+        }
+
+
+
+        /* =====================================================
+           PREVIOUS
+        ====================================================== */
+
+        function previousVideo() {
+
+            if (
+                currentVideo > 1
+            ) {
+
+                loadVideo(
+                    currentVideo - 1
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           NEXT
+        ====================================================== */
+
+        function nextVideo() {
+
+            if (
+                currentVideo <
+                tutorials.length
+            ) {
+
+                loadVideo(
+                    currentVideo + 1
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           INITIAL
+        ====================================================== */
+
+        renderPlaylist();
+
+
+        updateProgress();
+
+
+        updateNavigation();
+
+
+
+        /*
+         * Update informasi tutorial
+         * sejak halaman pertama dibuka.
+         */
+
+        const initialVideo =
+            tutorials[currentVideo - 1];
+
+
+        if (initialVideo) {
+
+            document.getElementById(
+                "videoNumber"
+            ).textContent =
+                "Tutorial " +
+                String(currentVideo).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "videoTitle"
+            ).textContent =
+                initialVideo.title;
+
+
+            document.getElementById(
+                "videoDescription"
+            ).textContent =
+                initialVideo.description;
+
+        }
+
+
+
+        /* =====================================================
+           STORAGE SYNC
+        ====================================================== */
+
+        window.addEventListener(
+            "storage",
+            function (event) {
+
+                if (
+                    event.key ===
+                    "peterpWatched"
+                ) {
+
+                    watchedVideos =
+                        JSON.parse(
+                            event.newValue
+                        ) || [];
+
+
+                    renderPlaylist();
+
+
+                    updateProgress();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
